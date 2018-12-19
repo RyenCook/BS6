@@ -14,6 +14,16 @@ normalize.css v^3.0 | MIT License | git.io/normalize
 Copyright (c) Nicolas Gallagher and Jonathan Neal
 */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+.clearfix:after {
+  clear: both;
+  content: "";
+  display: table; }
+
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS and IE text size adjust after device orientation change,
@@ -362,15 +372,41 @@ th {
   height: auto;
   display: block; }
 
+.container {
+  max-width: 1152px;
+  margin: 0 auto;
+  position: relative; }
+
 .columns {
   display: flex;
   margin-left: -0.75rem;
   margin-right: -0.75rem;
   margin-top: -0.75rem; }
+  .columns:last-child {
+    margin-bottom: -0.75rem; }
+  .columns:not(:last-child) {
+    margin-bottom: calc(1.5rem - $column-gap); }
 
 .column {
+  background-color: #4532;
   display: block;
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
   padding: 0.75rem; }
+  .column.quarter {
+    flex: none;
+    width: 25%; }
+  .column.half {
+    flex: none;
+    width: 50%; }
+  .column.three-quarters {
+    flex: none;
+    width: 75%; }
+
+.debug {
+  background-color: #3672;
+  font-weight: 600;
+  padding: 1.25rem 0;
+  position: relative;
+  text-align: center; }
