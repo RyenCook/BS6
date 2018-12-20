@@ -378,9 +378,6 @@ th {
   flex-grow: 1;
   flex-shrink: 1;
   padding: 0.75rem; }
-  .column.full {
-    flex: none;
-    width: 100%; }
 
 .columns {
   margin-left: -0.75rem;
@@ -390,8 +387,31 @@ th {
     margin-bottom: -0.75rem; }
   .columns:not(:last-child) {
     margin-bottom: calc(1.5rem - $column-gap); }
+  .columns.mobile {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 0.75rem; }
+    .columns.mobile .column.full {
+      flex: none;
+      width: 100%; }
+    .columns.mobile .column.half {
+      flex: none;
+      width: 50%; }
 
 @media screen and (min-width: 769px) {
   .columns {
     display: flex;
-    flex-flow: row wrap; } }
+    flex-flow: row wrap; }
+
+  .column.full {
+    flex: none;
+    width: 100%; }
+  .column.half {
+    flex: none;
+    width: 50%; } }
+.debug {
+  background-color: #4529;
+  font-weight: 600;
+  padding: 1.25rem 0;
+  position: relative;
+  text-align: center; }
