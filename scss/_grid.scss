@@ -1,14 +1,17 @@
 $column-gap: 0.75rem !default;
+
 .column {
-    display: block;
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 1;
     padding: $column-gap;
+    &.full {
+        flex: none;
+        width: 100%;
+    }
 }
 
 .columns {
-    display: block;
     margin-left: (-$column-gap);
     margin-right: (-$column-gap);
     margin-top: (-$column-gap);
@@ -22,6 +25,7 @@ $column-gap: 0.75rem !default;
 
 @media screen and (min-width: 769px) {
     .columns {
-        display: flex !important;
+        display: flex;
+        flex-flow: row wrap;
     }
 }

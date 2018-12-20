@@ -374,14 +374,15 @@ th {
   display: block; }
 
 .column {
-  display: block;
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
   padding: 0.75rem; }
+  .column.full {
+    flex: none;
+    width: 100%; }
 
 .columns {
-  display: block;
   margin-left: -0.75rem;
   margin-right: -0.75rem;
   margin-top: -0.75rem; }
@@ -392,4 +393,5 @@ th {
 
 @media screen and (min-width: 769px) {
   .columns {
-    display: flex !important; } }
+    display: flex;
+    flex-flow: row wrap; } }
