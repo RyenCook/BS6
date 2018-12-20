@@ -36,7 +36,9 @@ html {
   -ms-text-size-adjust: 100%;
   /* 2 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */ }
+  /* 2 */
+  overflow-x: hidden;
+  overflow-y: scroll; }
 
 /**
  * Remove default margin.
@@ -382,8 +384,9 @@ th {
 
 .columns {
   margin-left: -0.75rem;
-  margin-right: -0.75rem;
-  margin-top: -0.75rem; }
+  margin-right: -0.75rem; }
+  .columns:first-of-type {
+    margin-top: -0.75rem; }
   .columns:last-child {
     margin-bottom: -0.75rem; }
   .columns:not(:last-child) {
