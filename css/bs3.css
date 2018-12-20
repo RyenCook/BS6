@@ -377,7 +377,8 @@ th {
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
-  padding: 0.75rem; }
+  padding: 0.75rem;
+  background-color: rgba(255, 21, 0, 0.333); }
 
 .columns {
   margin-left: -0.75rem;
@@ -389,14 +390,18 @@ th {
     margin-bottom: calc(1.5rem - $column-gap); }
   .columns.mobile {
     display: flex;
-    flex-flow: row wrap;
-    margin-top: 0.75rem; }
+    flex-flow: row wrap; }
     .columns.mobile .column.full {
       flex: none;
       width: 100%; }
     .columns.mobile .column.half {
       flex: none;
       width: 50%; }
+    .columns.mobile .column.quarter {
+      flex: none;
+      width: 25%; }
+  .columns .columns {
+    margin-top: 0.75rem; }
 
 @media screen and (min-width: 769px) {
   .columns {
