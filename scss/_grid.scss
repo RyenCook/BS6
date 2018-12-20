@@ -1,13 +1,14 @@
 $column-gap: 0.75rem !default;
-
-.container {
-    max-width: 1152px;
-    margin: 0 auto;
-    position: relative;
+.column {
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: $column-gap;
 }
 
 .columns {
-    display: flex;
+    display: block;
     margin-left: (-$column-gap);
     margin-right: (-$column-gap);
     margin-top: (-$column-gap);
@@ -19,31 +20,8 @@ $column-gap: 0.75rem !default;
     }
 }
 
-.column {
-    background-color: #4532;
-    display: block;
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
-    padding: 0.75rem;
-    &.quarter {
-        flex: none;
-        width: 25%;
+@media screen and (min-width: 769px) {
+    .columns {
+        display: flex !important;
     }
-    &.half {
-        flex: none;
-        width: 50%;
-    }
-    &.three-quarters {
-        flex: none;
-        width: 75%;
-    }
-}
-
-.debug {
-    background-color: #3672;
-    font-weight: 600;
-    padding: 1.25rem 0;
-    position: relative;
-    text-align: center;
 }
