@@ -1,51 +1,53 @@
-$column-gap: 0.75rem !default;
-
+$column-gap: 0.2rem !default;
 .column {
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 1;
     padding: $column-gap;
     background-color: rgba(255, 21, 0, 0.333);
+    .columns.mobile>& {
+        &.full {
+            flex: none;
+            width: 100%;
+        }
+        &.three-quarters {
+            flex: none;
+            width: 75%;
+        }
+        &.two-thirds {
+            flex: none;
+            width: 66.6666%;
+        }
+        &.half {
+            flex: none;
+            width: 50%;
+        }
+        &.third {
+            flex: none;
+            width: 33.3333%;
+        }
+        &.quarter {
+            flex: none;
+            width: 25%;
+        }
+    }
 }
 
 .columns {
     margin-left: (-$column-gap);
     margin-right: (-$column-gap);
-    &:first-of-type {
-        margin-top: (-$column-gap);
-    }
-    &:last-child {
+    margin-top: (-$column-gap);
+    /* Ensures that nested grids and adjacent columns are even */
+    .columns:last-child {
         margin-bottom: (-$column-gap);
     }
+    /* Proper spacing between columns */
     &:not(:last-child) {
-        margin-bottom: calc(1.5rem - $column-gap);
+        margin-bottom: $column-gap;
     }
-
     &.mobile {
         display: flex;
         flex-flow: row wrap;
-
-        .column {
-            &.full {
-                flex: none;
-                width: 100%;
-            }
-        
-            &.half {
-                flex: none;
-                width: 50%;
-            }
-
-            &.quarter {
-                flex: none;
-                width: 25%;
-            }
-        }
-
-    }
-
-    .columns {
-        margin-top: $column-gap;
     }
 }
 
@@ -54,18 +56,42 @@ $column-gap: 0.75rem !default;
         display: flex;
         flex-flow: row wrap;
     }
-
     .column {
         &.full {
             flex: none;
             width: 100%;
         }
-    
+        &.three-quarters {
+            flex: none;
+            width: 75%;
+        }
+        &.two-thirds {
+            flex: none;
+            width: 66.6666%;
+        }
         &.half {
             flex: none;
             width: 50%;
         }
+        &.third {
+            flex: none;
+            width: 33.3333%;
+        }
+        &.quarter {
+            flex: none;
+            width: 25%;
+        }
     }
+}
+
+.container {
+    margin: 0 auto;
+    position: relative;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 4rem - $column-gap;
+    max-width: none;
+    width: auto;
 }
 
 .debug {
@@ -74,4 +100,8 @@ $column-gap: 0.75rem !default;
     padding: 1.25rem 0;
     position: relative;
     text-align: center;
+}
+
+.tallboi {
+    height: 100%;
 }

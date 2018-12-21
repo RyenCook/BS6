@@ -379,32 +379,40 @@ th {
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
-  padding: 0.75rem;
+  padding: 0.2rem;
   background-color: rgba(255, 21, 0, 0.333); }
+  .columns.mobile > .column.full {
+    flex: none;
+    width: 100%; }
+  .columns.mobile > .column.three-quarters {
+    flex: none;
+    width: 75%; }
+  .columns.mobile > .column.two-thirds {
+    flex: none;
+    width: 66.6666%; }
+  .columns.mobile > .column.half {
+    flex: none;
+    width: 50%; }
+  .columns.mobile > .column.third {
+    flex: none;
+    width: 33.3333%; }
+  .columns.mobile > .column.quarter {
+    flex: none;
+    width: 25%; }
 
 .columns {
-  margin-left: -0.75rem;
-  margin-right: -0.75rem; }
-  .columns:first-of-type {
-    margin-top: -0.75rem; }
-  .columns:last-child {
-    margin-bottom: -0.75rem; }
+  margin-left: -0.2rem;
+  margin-right: -0.2rem;
+  margin-top: -0.2rem;
+  /* Ensures that nested grids and adjacent columns are even */
+  /* Proper spacing between columns */ }
+  .columns .columns:last-child {
+    margin-bottom: -0.2rem; }
   .columns:not(:last-child) {
-    margin-bottom: calc(1.5rem - $column-gap); }
+    margin-bottom: 0.2rem; }
   .columns.mobile {
     display: flex;
     flex-flow: row wrap; }
-    .columns.mobile .column.full {
-      flex: none;
-      width: 100%; }
-    .columns.mobile .column.half {
-      flex: none;
-      width: 50%; }
-    .columns.mobile .column.quarter {
-      flex: none;
-      width: 25%; }
-  .columns .columns {
-    margin-top: 0.75rem; }
 
 @media screen and (min-width: 769px) {
   .columns {
@@ -414,12 +422,36 @@ th {
   .column.full {
     flex: none;
     width: 100%; }
+  .column.three-quarters {
+    flex: none;
+    width: 75%; }
+  .column.two-thirds {
+    flex: none;
+    width: 66.6666%; }
   .column.half {
     flex: none;
-    width: 50%; } }
+    width: 50%; }
+  .column.third {
+    flex: none;
+    width: 33.3333%; }
+  .column.quarter {
+    flex: none;
+    width: 25%; } }
+.container {
+  margin: 0 auto;
+  position: relative;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-bottom: 3.8rem;
+  max-width: none;
+  width: auto; }
+
 .debug {
   background-color: #4529;
   font-weight: 600;
   padding: 1.25rem 0;
   position: relative;
   text-align: center; }
+
+.tallboi {
+  height: 100%; }
