@@ -1,0 +1,8 @@
+.container {
+    position: relative;
+    margin-left: $column-gap * 2;
+    margin-right: $column-gap * 2;
+    margin-bottom: $column-gap;
+    max-width: none;
+    width: auto;
+}

@@ -1,0 +1,23 @@
+.hero {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .hero-head,
+    .hero-foot {
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+    .hero-body {
+        flex-grow: 1;
+        flex-shrink: 0;
+        padding: 3rem 1.5rem;
+    }
+    &.full {
+        min-height: 100vh;
+        .hero-body {
+            align-items: center;
+            display: flex;
+        }
+    }
+}
